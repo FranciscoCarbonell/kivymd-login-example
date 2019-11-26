@@ -1,0 +1,31 @@
+#:include pages/login/login.kv
+#:include pages/pagemain/pagemain.kv
+
+MainNavigationLayout:
+    MDNavigationDrawer:
+        id: navigation_drawer
+        drawer_logo: "menu.png"
+
+        NavigationDrawerIconButton:
+            icon: "home"
+            text: "Inicio"
+            on_release: screen_manager.current = "screen_inicio"
+
+        NavigationDrawerIconButton:
+            icon: "lock"
+            text: "Pagina segunda"
+            on_release: screen_manager.current = "screen_segundo"
+
+
+    BoxLayout:
+        orientation: "vertical"
+        MDToolbar:
+            id: w_toolbar
+            title: "Aplicacion de ejemplo"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: []
+
+        ScreenManager:
+            id: screen_manager
+            PageLogin:
+            PageMain:

@@ -1,0 +1,20 @@
+#:import PageMain pages.pagemain.pagemain
+
+<PageMain>:
+    name: "screen_inicio"
+    StackLayout:
+        orientation: "lr-tb"
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: .5
+
+            MDLabel:
+                text: "Pagina Inicio"
+                size_hint: None, None
+                pos_hint: {"center_x": .5}
+
+            MDRaisedButton:
+                text: "Logout"
+                size_hint: None, None
+                pos_hint: {"center_x": .5}
+                on_release: root.logout()

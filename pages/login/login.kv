@@ -1,0 +1,41 @@
+#:import PageLogin pages.login.login
+
+<PageLogin>:
+
+    name: "screen_login"
+    email: email_input
+    password: password_input
+
+    StackLayout:
+        orientation: "lr-tb"
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: .5
+            spacing: 20
+
+            MDTextFieldRound:
+                id: email_input
+                normal_color: [0, 0, 0, 0.2]
+                active_color: [0, 0, 0, 0.2]
+                icon_type: "left"
+                size_hint: .5, None
+                pos_hint: {"center_x": .5}
+                hint_text: "Email"
+
+            MDTextFieldRound:
+                id: password_input
+                password: True
+                normal_color: [0, 0, 0, 0.2]
+                active_color: [0, 0, 0, 0.2]
+                icon_type: "left"
+                icon_left: "lock"
+                size_hint: .5, None
+                pos_hint: {"center_x": .5}
+                hint_text: "Password"
+
+            MDRaisedButton:
+                text: "Iniciar"
+                size_hint: .3, None
+                pos_hint: {"center_x": .5}
+                on_release: root.loggin_user()
